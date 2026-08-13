@@ -1,0 +1,26 @@
+name: My First Custom Workflow
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  linux-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello World! Ez az elso sajat GitHub Actions tesztem."
+
+      - name: Show Event and OS
+        run: |
+          echo "A folyamatot kivalto esemeny: ${{ github.event_name }}"
+          echo "A futtato kornyezet operacios rendszere: $RUNNER_OS"
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Run Bash on Windows
+        shell: bash
+        run: |
+          echo "Ez a lepes Windows runneren fut, de Bash shell-lel!"
+          echo "Windows OS: $RUNNER_OS"
