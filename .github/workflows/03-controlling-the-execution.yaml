@@ -7,6 +7,10 @@ on:
         type: boolean
         description: Whether unit tests will pass or not
         default: true
+      my-input-boolean:
+        type: boolean
+        description: A boolean input to demonstrate conditional execution
+        default: false
 
 jobs:
   lint-build:
